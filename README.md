@@ -1,5 +1,8 @@
 # BCQM Programs
 
+The code in this repository is the actual code used in investigating the two time axes.
+it has not been changed.
+
 Simulation code supporting the **Boundary-Condition Quantum Mechanics (BCQM)** framework.  
 This repository contains two core models:
 
