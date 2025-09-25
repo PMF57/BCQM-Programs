@@ -23,19 +23,22 @@ Install dependencies with:
 pip install -r requirements.txt
 ```
 
-## Usage
-Run the simulation with:
-```bash
-python double_slit_sim.py
-```
-
-Options for number of particles, slit separation, and horizon parameters (W, V) can be adjusted in the script.
+## How to Run
+1. Open a terminal in this folder.  
+2. Ensure Python and dependencies are installed.  
+3. Run the simulation with:
+   ```bash
+   python double_slit_sim.py
+   ```
+4. Adjust parameters for number of particles, slit separation, and horizons (W, V) by editing the script.
 
 ## Outputs
 The program generates:
 - Interference plots (with and without coherence effects).
 - Histograms of landing distributions.
 - Comparisons between coherent and incoherent sums.
+
+All output files are saved in the `outputs/` folder.
 
 ## Notes
 - The program is a **research prototype**: simple and lightweight for conceptual exploration, not optimized for performance.
@@ -45,5 +48,5 @@ The program generates:
 MIT License (see repository root).
 
 ## Citation
-If you use this code, please cite the Zenodo record for the BCQM project:
+If you use this code, please cite the Zenodo record for the BCQM project:  
 [https://doi.org/10.5281/zenodo.17191307](https://doi.org/10.5281/zenodo.17191307)
