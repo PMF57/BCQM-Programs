@@ -86,3 +86,18 @@ If you use this code in academic work, please cite:
 
 > Ferguson, P. M. (2025). *Boundary-Condition Quantum Mechanics (BCQM): Simulation Programs*. GitHub.  
 > https://github.com/<your-username>/bcqm-programs
+---
+
+# BCQM Programs
+
+This repository contains the two small simulation programs used alongside the BCQM preprint.
+
+- **double_slit_sim/** – double-slit ensemble simulation producing interference/incoherent outputs.
+- **bcqm_toy_experiment/** – toy collapse dynamics producing damping/coherence figures.
+
+Each subfolder includes:
+- A short README explaining how the figures were generated,
+- The exact `outputs/*.png` used in the paper,
+- A `PROVENANCE.txt` noting environment and date.
+
+> These scripts retain “fast/stub” branches used during exploratory runs. They’re documented in each README.
