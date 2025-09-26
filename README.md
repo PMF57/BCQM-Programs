@@ -1,3 +1,110 @@
+# BCQM-Programs
+
+Analytical and computational companions for the BCQM project.
+
+This repository now includes **`bcqm_tools/`**, a *drop‑in, reproducible, and supported* toolset that
+supersedes the original ad‑hoc scripts in `double_slit/` and `toy_experiment/`. Those legacy folders
+remain for transparency, but new users should start with **`bcqm_tools`**.
+
+---
+
+## 📦 What is `bcqm_tools/`?
+A self-contained folder you can run **without installing anything** (or optionally install locally).
+It provides:
+
+- A **CLI** with three programs:
+  - `ramsey` – computes D(t)=exp(-∫_0^t Γ) , the bound F_opt ≤ 1/2 (1+D), and the **W** threshold.
+  - `gkls` – minimal, phase‑covariant GKLS qubit simulator (dephasing ± relaxation); plots Bloch components.
+  - `galton` – seeded Galton channels toy model (repeatable histogram).
+- **YAML configs** (zero typing of parameters).
+- **Deterministic outputs** (seeded RNG) + **metadata JSON** per run.
+- **Tests** (`pytest`) for quick smoke checks.
+
+> For full details, see `bcqm_tools/README.md`.
+
+---
+
+## 🚀 Quickstart (repo‑root commands)
+
+```bash
+# 1) Create & activate a local virtual environment
+python -m venv .venv
+# macOS/Linux
+source .venv/bin/activate
+# Windows (PowerShell)
+# .venv\Scripts\Activate.ps1
+
+# 2) Install minimal dependencies for the tools
+pip install -r bcqm_tools/requirements.txt
+
+# 3) Run examples (no install required)
+python -m bcqm_tools.cli --help
+
+# Ramsey (constant gamma): writes CSV/PNG/JSON under bcqm_tools/examples/
+python -m bcqm_tools.cli ramsey --gamma 0.1 --fstar 0.9 --tmax 5e-5 --dt 2e-7 --out bcqm_tools/examples/ramsey
+
+# GKLS qubit (phase‑covariant)
+python -m bcqm_tools.cli gkls --gamma-phi 0.1 --gamma-relax 0.0 --tmax 5e-5 --dt 5e-7 --out bcqm_tools/examples/gkls
+
+# Galton channels (seeded)
+python -m bcqm_tools.cli galton --rows 10 --n 1000 --seed 42 --out bcqm_tools/examples/galton
+
+# YAML-driven (zero typing)
+python -m bcqm_tools.run_from_yaml --config bcqm_tools/configs/ramsey_constant.yml
+python -m bcqm_tools.run_from_yaml --config bcqm_tools/configs/gkls_basic.yml
+python -m bcqm_tools.run_from_yaml --config bcqm_tools/configs/galton.yml
+
+# (Optional) Smoke tests
+pytest -q bcqm_tools/tests
+```
+
+---
+
+## 🗂 Repository structure
+
+```
+BCQM-Programs/
+├─ bcqm_tools/                 # NEW: reproducible, supported tools (CLI + YAML + tests + docs)
+│  ├─ README.md
+│  ├─ requirements.txt
+│  ├─ configs/                 # ready-to-run YAMLs
+│  ├─ examples/                # outputs written here (CSV/PNG/JSON)
+│  ├─ tests/                   # pytest smoke tests
+│  ├─ __init__.py  cli.py  run_from_yaml.py  ramsey.py  gkls.py  galton.py  utils.py
+│  └─ pyproject.toml  LICENSE  CITATION.cff  .gitignore
+│
+├─ double_slit/                # legacy scripts (kept for transparency)
+├─ toy_experiment/             # legacy scripts (kept for transparency)
+│
+├─ CITATION.cff
+├─ README.md                   # (this file)
+├─ requirements.txt            # (optional; repo-wide requirements if used)
+├─ .gitignore
+├─ .gitattributes
+└─ .DS_Store
+```
+
+**Why this structure?** So a new reader can clone the repo, run the tools immediately from the root,
+and reproduce the key figures/numerics without touching legacy code.
+
+---
+
+## 📑 Citing
+
+Please see the repository’s `CITATION.cff`. If you archive the repository or releases to Zenodo, add the DOI here.
+
+---
+
+## 🔁 Legacy vs. `bcqm_tools`
+
+- The **legacy** folders (`double_slit/`, `toy_experiment/`) were minimal, exploratory scripts.  
+- **`bcqm_tools/`** is the production path: CLI, configs, seeded runs, metadata, and tests.
+  If you are reviewing or reproducing the BCQM results, start there.
+
+---
+
+## (Original README content)
+
 # BCQM Programs
 
 The code in this repository is the actual code used in investigating the two time axes.
