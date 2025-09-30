@@ -4,7 +4,7 @@ title: "BCQM Programs: Simulation code for Boundary-Condition Quantum Mechanics"
 authors:
   - family-names: Ferguson
     given-names: Peter M.
-doi: 10.5281/zenodo.17191307
+doi: 10.5281/zenodo.17191306
 repository-code: "https://github.com/PMF57/BCQM-Programs"
 version: "1.0.0"
 date-released: "2025-09-25"
