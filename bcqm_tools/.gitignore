@@ -8,3 +8,6 @@ __pycache__/
 bcqm_tools/examples/*.png
 bcqm_tools/examples/*.csv
 bcqm_tools/examples/*.json
+
+
+.DS_Store
