@@ -1,5 +1,7 @@
 # BCQM-Programs
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17191306.svg)](https://doi.org/10.5281/zenodo.17191306)
+
 Analytical and computational companions for the BCQM project.
 
 This repository now includes **`bcqm_tools/`**, a *drop‑in, reproducible, and supported* toolset that
